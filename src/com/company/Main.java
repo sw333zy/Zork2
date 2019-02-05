@@ -7,20 +7,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("choice (n2)");
-        //System.out.println("What direction you wish to travel in");
         String choice = keyboard.next();
 
         while(){
 
-            switch(choice){
-                case "n2":
-                    sou
-                    break;
-            }
+            System.out.println("What direction you wish to travel in");
+
+
         }
     }
     public static void foyer(String choice){
-        System.out.println("You are in foyer \n It contains : dead scorpion\n ");
+        System.out.println("You are in foyer \n It contains : dead scorpion\n You can go North in room 2");
         switch(choice){
             case "n":
                 System.out.println("going to room 2");
@@ -34,6 +31,8 @@ public class Main {
     }
 
     public static void frontRoom(){
+
+        String Choice
         switch(){
             case "n":
                 System.out.println("Invalid choice");
