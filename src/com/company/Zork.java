@@ -16,8 +16,10 @@ public class Main {
                 case 1:
                     foyer(choice);
                 case 2:
+                    frontRoom()
                 case 3:
                 case 4:
+                    library()
                 case 5:
                 case 6:
                 case 7:
