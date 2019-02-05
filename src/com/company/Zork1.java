@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Zork {
+public class Zork1 {
     static Scanner keyboard = new Scanner(System.in);
     static String choice;
 
@@ -11,7 +11,7 @@ public class Zork {
         String choice = keyboard.next();
         char direction = '1';
         int room = 0;
-        
+
         while(room != 2){
             if(choice.equals("n1")){
                 direction = choice.charAt(0);

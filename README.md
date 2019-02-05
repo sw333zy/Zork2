@@ -15,7 +15,7 @@ When the user exits the house or quits there is a 25% chance they will be follow
 Also let the user know how many rooms they visited after they exit or quit.
 
 |   |room       |contains           |doors to (direction & room #)  |
-|---|-----------|-------------------|-------------------------------|
+|---|-----------|:-----------------:|-------------------------------|
 |#1	|foyer	    |dead scorpion	    |room n2                        |
 |#2	|front room	|piano	            |rooms s1,w3, e4                |
 |#3	|library	|spiders	        |rooms e2 & n5                  |
