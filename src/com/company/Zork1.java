@@ -8,14 +8,19 @@ public class Zork1 {
 
     public static void main(String[] args) {
         System.out.println("What direction you wish to travel in (type:1)");
-        String choice = keyboard.next();
+
+
+        String choice;// = keyboard.next();
         char direction = '1';
         int room = 0;
 
-        while(room != 2){
-            if(choice.equals("n1")){
-                direction = choice.charAt(0);
-                room = foyer(direction);
+        while(){
+            choice = keyboard.next();
+            while(room != 2){
+                if(choice.equals("n1")){
+                    direction = choice.charAt(0);
+                    room = foyer(direction);
+                }
             }
         }
 
