@@ -57,12 +57,8 @@ public class Zork1 {
             case 'n':
                 room = 2;
                 break;
-            case 's':
-            case 'e':
-            case 'w':
             default:
                 System.out.println("Invalid direction");
-                room =  1;
         }
         return room;
     }
@@ -71,9 +67,6 @@ public class Zork1 {
         System.out.println("You are in front Room \n It contains : piano \n Choices (s1/w3/e4)");
         int room = 2;
         switch (direction) {
-            case 'n':
-                System.out.println("Invalid choice");
-                break;
             case 's':
                 room = 1;
                 break;
@@ -84,8 +77,7 @@ public class Zork1 {
                 room = 3;
                 break;
             default:
-                room = 2;
-                break;
+                System.out.println("Invalid direction");
         }
         return room;
     }
@@ -127,9 +119,6 @@ public class Zork1 {
             case 's':
                 room = 3;
                 break;
-            case 'n':
-            case 'e':
-            case 'w':
             default:
                 System.out.println("Invalid direction");
         }
@@ -140,19 +129,14 @@ public class Zork1 {
         System.out.println("You are in the vault\n It contains : 3 walking skeletons \n Choices (e7/e8)");
         int room = 6;
         switch (direction) {
-            case 'n':
-            case 's':
             case 'e':
                 int random = 1+(int)(Math.random()*100);
-                switch(random){
-                    room = 7;
-                    break;
-
+                if(random <= 25){
                     room = 8;
-                    break;
+                } else {
+                    room = 7;
                 }
-
-            case 'w':
+                break;
             default:
                 System.out.println("Invalid direction");
         }
@@ -163,10 +147,12 @@ public class Zork1 {
         System.out.println("You are in the parlor\n It contains : treasure chest\n Choices (w6/s4)");
         int room = 7;
         switch (direction) {
-            case 'n':
             case 's':
-            case 'e':
+                room = 4;
+                break;
             case 'w':
+                room = 6;
+                break;
             default:
                 System.out.println("Invalid direction");
         }
@@ -177,10 +163,9 @@ public class Zork1 {
         System.out.println("You are in the secret room\n It contains : piles of gold\n Choices (w6)");
         int room = 8;
         switch (direction) {
-            case 'n':
-            case 's':
-            case 'e':
             case 'w':
+                room = 6;
+                break;
             default:
                 System.out.println("Invalid direction");
         }
