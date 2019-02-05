@@ -7,106 +7,167 @@ public class Zork1 {
     static String choice;
 
     public static void main(String[] args) {
-        System.out.println("What direction you wish to travel in (type:1)");
-
+        System.out.println("Enter room 1 (1)");
 
         String choice;// = keyboard.next();
         char direction = '1';
-        int room = 0;
 
-        while(){
-            choice = keyboard.next();
-            while(room != 2){
-                if(choice.equals("n1")){
-                    direction = choice.charAt(0);
-                    room = foyer(direction);
-                }
-            }
-        }
-
-
-        room = Integer.parseInt(choice.substring(1,2));
-        while(choice.equals("n1")){
-            switch(room){
+        while (true) { //room
+            System.out.println("Enter direction");
+            direction = keyboard.next().charAt(0);
+            System.out.println("Enter room");
+            int room = keyboard.nextInt();
+            // room = Integer.parseInt(choice.substring(1,2));
+            switch (room) { //Room
                 case 1:
                     room = foyer(direction);
+                    break;
                 case 2:
-                    room = frontRoom();
+                    room = frontRoom(direction);
+                    break;
                 case 3:
-                    library();
+                    room = library(direction);
+                    break;
                 case 4:
-                    kitchen();
+                    room = kitchen(direction);
+                    break;
                 case 5:
-                    diningRoom();
+                    room = diningRoom(direction);
+                    break;
                 case 6:
-                    vault();
+                    room = vault(direction);
+                    break;
                 case 7:
-                    parlor();
+                    room = parlor(direction);
+                    break;
                 case 8:
-                    secretRoom();
+                    room = secretRoom(direction);
+                    break;
+                default:
+                    System.out.println("Invalid Room");
+                    System.exit(1);
             }
         }
     }
 
-    public static int foyer(char direction){
+    public static int foyer(char direction) {
         System.out.println("You are in foyer \n It contains : dead scorpion\n You can only go to North in room 2 (n2)");
-        switch(direction){
+        switch (direction) {
             case 'n':
                 return 2;
             case 's':
             case 'e':
             case 'w':
-                System.out.println("Invalid choice");
             default:
+                System.out.println("Invalid direction");
                 return 1;
         }
     }
 
-    public static int frontRoom(){
+    public static int frontRoom(char direction) {
         System.out.println("You are in front Room \n It contains : piano \n Choices (s1/w3/e4)");
-        String choice = "";
-        switch(choice){
-            case "n":
-                System.out.println("Invalid choice");
-            case "s":
-            case "e":
-            case "w":
+        int room = 2;
+        switch (direction) {
+            case 'n':
                 System.out.println("Invalid choice");
                 break;
+            case 's':
+                room = 1;
+                break;
+            case 'e':
+                room = 4;
+                break;
+            case 'w':
+                room = 3;
+                break;
+            default:
+                room = 2;
+                break;
         }
-        return 0;
+        return room;
     }
 
-    public static void library(){
+    public static int library(char direction) {
         System.out.println("You are in the library \n It contains : spider \n Choices (e2/n5)");
-//        switch(){
-//            case 2:
-//                break;
-//            case 5:
-//                break;
-//        }
+        int room = 3;
+        switch (direction) {
+            case 2:
+                room = 2;
+                break;
+            case 5:
+                room = 5;
+                break;
+            default:
+                System.out.println("Invalid direction");
+        }
+        return room;
     }
-    public static void kitchen(){
-        System.out.println("You are in the Kitchen \n It contains : bats \n Choices (w2/n7)");
-//        switch(){
-//            case 2:
-//                break;
-//            case 7:
-//                break;
-//        }
-    }
-    public static void diningRoom(){
-        System.out.println("You are in the Dining Room\n It contains : dust empty box \n Choices (r3)");
-        library();
-    }
-    public static void vault(){
-        System.out.println("You are in the vault\n It contains : 3 walking skeletons \n Choices (e7/e8)");
 
+    public static int kitchen(char direction) {
+        System.out.println("You are in the Kitchen \n It contains : bats \n Choices (w2/n7)");
+        int room = 4;
+        switch (direction) {
+            case 2:
+                break;
+            case 7:
+                break;
+        }
+        return room;
     }
-    public static void parlor(){
+
+    public static int diningRoom(char direction) {
+        System.out.println("You are in the Dining Room\n It contains : dust empty box \n Choices (r3)");
+        int room = 5;
+        switch (direction) {
+            case 'n':
+            case 's':
+            case 'e':
+            case 'w':
+            default:
+                System.out.println("Invalid direction");
+        }
+        return room;
+    }
+
+    public static int vault(char direction) {
+        System.out.println("You are in the vault\n It contains : 3 walking skeletons \n Choices (e7/e8)");
+        int room = 6;
+        switch (direction) {
+            case 'n':
+            case 's':
+            case 'e':
+            case 'w':
+            default:
+                System.out.println("Invalid direction");
+        }
+        return room;
+    }
+
+    public static int parlor(char direction) {
         System.out.println("You are in the parlor\n It contains : treasure chest\n Choices (w6/s4)");
+        int room = 7;
+        switch (direction) {
+            case 'n':
+            case 's':
+            case 'e':
+            case 'w':
+            default:
+                System.out.println("Invalid direction");
+        }
+        return room;
     }
-    public static void secretRoom(){
+
+    public static int secretRoom(char direction) {
         System.out.println("You are in the secret room\n It contains : piles of gold\n Choices (w6)");
+        int room = 8;
+        switch (direction) {
+            case 'n':
+            case 's':
+            case 'e':
+            case 'w':
+            default:
+                System.out.println("Invalid direction");
+        }
+        return room;
     }
 }
