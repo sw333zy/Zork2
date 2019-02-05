@@ -52,16 +52,19 @@ public class Zork1 {
 
     public static int foyer(char direction) {
         System.out.println("You are in foyer \n It contains : dead scorpion\n You can only go to North in room 2 (n2)");
+        int room = 1;
         switch (direction) {
             case 'n':
-                return 2;
+                room = 2;
+                break;
             case 's':
             case 'e':
             case 'w':
             default:
                 System.out.println("Invalid direction");
-                return 1;
+                room =  1;
         }
+        return room;
     }
 
     public static int frontRoom(char direction) {
@@ -91,10 +94,10 @@ public class Zork1 {
         System.out.println("You are in the library \n It contains : spider \n Choices (e2/n5)");
         int room = 3;
         switch (direction) {
-            case 2:
+            case 'e':
                 room = 2;
                 break;
-            case 5:
+            case 'n':
                 room = 5;
                 break;
             default:
@@ -107,9 +110,11 @@ public class Zork1 {
         System.out.println("You are in the Kitchen \n It contains : bats \n Choices (w2/n7)");
         int room = 4;
         switch (direction) {
-            case 2:
+            case 'w':
+                room = 2;
                 break;
-            case 7:
+            case 'n':
+                room = 7;
                 break;
         }
         return room;
@@ -119,8 +124,10 @@ public class Zork1 {
         System.out.println("You are in the Dining Room\n It contains : dust empty box \n Choices (r3)");
         int room = 5;
         switch (direction) {
-            case 'n':
             case 's':
+                room = 3;
+                break;
+            case 'n':
             case 'e':
             case 'w':
             default:
@@ -136,6 +143,15 @@ public class Zork1 {
             case 'n':
             case 's':
             case 'e':
+                int random = 1+(int)(Math.random()*100);
+                switch(random){
+                    room = 7;
+                    break;
+
+                    room = 8;
+                    break;
+                }
+
             case 'w':
             default:
                 System.out.println("Invalid direction");
